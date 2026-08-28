@@ -14,7 +14,7 @@ class Settings(BaseSettings):
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 60 * 24 # 24 hours
     REFRESH_TOKEN_EXPIRE_DAYS: int = 30
     
-    CORS_ORIGINS: list[str] = ["http://localhost:3000", "http://localhost:3001", "http://127.0.0.1:3000", "http://127.0.0.1:3001", "*"]
+    CORS_ORIGINS: str = "*"
     ML_MODELS_PATH: str = "../ml/models/registry/production"
     DEBUG: bool = False
     
