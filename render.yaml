@@ -16,4 +16,4 @@ services:
       - key: ENVIRONMENT
         value: production
       - key: CORS_ORIGINS
-        value: "*"
+        value: '["*"]'
