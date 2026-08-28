@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import url('https://unpkg.com/leaflet@1.9.4/dist/leaflet.css');
+
+@layer base {
+  :root {
+    --background: #f8fafc;
+    --foreground: #0f172a;
+    --card: #ffffff;
+    --card-foreground: #0f172a;
+    --border: #e2e8f0;
+    --primary: #059669;
+    --primary-foreground: #ffffff;
+  }
+  
+  html {
+    -webkit-tap-highlight-color: transparent;
+    scroll-behavior: smooth;
+    background-color: #f8fafc;
+    color: #0f172a;
+  }
+
+  body {
+    @apply bg-slate-50 text-slate-900 font-sans antialiased overflow-x-hidden;
+    font-family: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
+  }
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .glass-card {
+    @apply bg-white/90 backdrop-blur-xl border border-slate-200/80 shadow-xl shadow-slate-200/50;
+  }
+
+  .glass-pill {
+    @apply bg-white border border-slate-200 text-slate-700 hover:border-emerald-500 hover:text-emerald-700 shadow-sm transition-all;
+  }
+
+  /* Safe area padding for mobile notch/home bar */
+  .pb-safe {
+    padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 5rem);
+  }
+}
+
+/* Custom leaflet map popup styling in Light Theme */
+.custom-popup .leaflet-popup-content-wrapper {
+  @apply rounded-2xl shadow-xl bg-white text-slate-900 border border-slate-200 p-0;
+}
+.custom-popup .leaflet-popup-tip {
+  @apply bg-white border-t border-l border-slate-200;
+}

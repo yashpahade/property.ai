@@ -1,0 +1,45 @@
+{
+    "training_date": "2026-08-08T11:18:16.683360",
+    "metrics": {
+        "rmse": 11291149.822672509,
+        "mae": 4468085.083401962,
+        "mape": 0.16419480326934938,
+        "r2": 0.9062503923491408
+    },
+    "weights": [
+        0.2163717988850512,
+        0.0489371001436469,
+        0.7346911009713019
+    ],
+    "feature_names": [
+        "Min_Price_per_sqft",
+        "Max_Price_per_sqft",
+        "Rating",
+        "Properties_For_Sale",
+        "PIN_Code",
+        "Carpet_Area_sqft",
+        "Built_up_Area_sqft",
+        "Plot_Area_sqft",
+        "BHK",
+        "Property_Age_Years",
+        "Lift",
+        "Ready_Reckoner_Rate_INR",
+        "Rental_Price_INR",
+        "Metro_Highway_Distance_km",
+        "derived_area_type_encoded",
+        "City_encoded",
+        "City_Zone_encoded",
+        "Locality_encoded",
+        "Gov_Approval_Authority_encoded",
+        "Latitude_Longitude_encoded",
+        "Exact_Address_encoded",
+        "Floor_Total_Floors_encoded",
+        "Parking_encoded",
+        "Facing_encoded",
+        "Registration_Date_encoded",
+        "Builder_encoded",
+        "RERA_ID_encoded",
+        "Nearby_Schools_Hospitals_encoded",
+        "Property_Type_encoded"
+    ]
+}
