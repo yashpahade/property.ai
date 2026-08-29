@@ -1,6 +1,6 @@
 import { MOCK_PROPERTIES, MOCK_PRICE_TRENDS, MOCK_TOP_LOCALITIES, MOCK_RECENT_PREDS, MOCK_CITY_DIST } from './mockData';
 
-const BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000/api/v1';
+const BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'https://property-ai-ji22.onrender.com/api/v1';
 
 async function fetchWithTimeout(url: string, options: RequestInit = {}, timeoutMs = 4000) {
   const controller = new AbortController();
