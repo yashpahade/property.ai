@@ -181,7 +181,7 @@ export default function MapComponent({
   const [mounted, setMounted] = useState(false);
   const [mapStyle, setMapStyle] = useState<'streets' | 'satellite' | 'topo'>('streets');
 
-  const maptilerApiKey = process.env.NEXT_PUBLIC_MAPTILER_API_KEY || 'get_your_own_OpIi9ZULNHzrESv6T2vL';
+  const maptilerApiKey = process.env.NEXT_PUBLIC_MAPTILER_API_KEY || 'Z5NKsgHomLJkpNLG9sQl';
 
   useEffect(() => {
     delete (L.Icon.Default.prototype as any)._getIconUrl;
