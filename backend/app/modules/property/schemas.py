@@ -56,6 +56,7 @@ class PropertyListResponse(BaseModel):
     size: int
 
 class PropertyFilters(BaseModel):
+    q: Optional[str] = None
     city: Optional[str] = None
     zone: Optional[str] = None
     locality: Optional[str] = None

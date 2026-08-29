@@ -9,6 +9,7 @@ router = APIRouter()
 
 @router.get("", response_model=schemas.PropertyListResponse)
 async def list_properties(
+    q: Optional[str] = None,
     city: Optional[str] = None, zone: Optional[str] = None, locality: Optional[str] = None,
     min_price: Optional[float] = None, max_price: Optional[float] = None,
     bhk: Optional[int] = None, property_type: Optional[str] = None, sort_by: Optional[str] = None,
@@ -16,7 +17,7 @@ async def list_properties(
     db: AsyncSession = Depends(get_db_session)
 ):
     filters = schemas.PropertyFilters(
-        city=city, zone=zone, locality=locality, min_price=min_price, max_price=max_price,
+        q=q, city=city, zone=zone, locality=locality, min_price=min_price, max_price=max_price,
         bhk=bhk, property_type=property_type
     )
     return await service.get_properties(db, filters, page, size, sort_by)

@@ -17,6 +17,17 @@ def haversine_distance(lat1: float, lon1: float, lat2: float, lon2: float) -> fl
 async def get_properties(db: AsyncSession, filters: PropertyFilters, page: int = 1, size: int = 20, sort_by: str = None):
     query = select(PropertyModel)
     
+    if filters.q:
+        search_term = f"%{filters.q}%"
+        query = query.where(
+            or_(
+                PropertyModel.title.ilike(search_term),
+                PropertyModel.address.ilike(search_term),
+                PropertyModel.locality.ilike(search_term),
+                PropertyModel.city.ilike(search_term)
+            )
+        )
+    
     if filters.city and filters.city != "All":
         query = query.where(PropertyModel.city.ilike(f"%{filters.city}%"))
     if filters.zone and filters.zone != "All":
